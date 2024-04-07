@@ -249,7 +249,7 @@ import {
     {
       id: "0",
       title: "Ask anything",
-      text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+      text: "Synapse AI lets users quickly find answers to their questions without having to search through multiple sources.",
       backgroundUrl: "./src/assets/benefits/card-1.svg",
       iconUrl: benefitIcon1,
       imageUrl: benefitImage2,
@@ -274,7 +274,7 @@ import {
     {
       id: "3",
       title: "Fast responding",
-      text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+      text: "Synapse AI uses strong backend to quickly find answers to the questions and reply to the users.",
       backgroundUrl: "./src/assets/benefits/card-4.svg",
       iconUrl: benefitIcon4,
       imageUrl: benefitImage2,
@@ -282,16 +282,16 @@ import {
     },
     {
       id: "4",
-      title: "Ask anything",
-      text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+      title: "Generate your content",
+      text: "Synapse AI can write content on the prompts given. It can source data from the internet and generate long paragraphs for blogs, posts etc.",
       backgroundUrl: "./src/assets/benefits/card-5.svg",
       iconUrl: benefitIcon1,
       imageUrl: benefitImage2,
     },
     {
       id: "5",
-      title: "Improve everyday",
-      text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
+      title: "Prompting made easy",
+      text: "The app can understand wide range of prompts of users and reply accordingly.",
       backgroundUrl: "./src/assets/benefits/card-6.svg",
       iconUrl: benefitIcon2,
       imageUrl: benefitImage2,
