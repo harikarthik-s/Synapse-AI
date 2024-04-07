@@ -37,6 +37,12 @@ import protopie from "./collaboration/protopie.png";
 import raindrop from "./collaboration/raindrop.png";
 import slack from "./collaboration/slack.png";
 
+import one from "./companylogo/1.png";
+import two from "./companylogo/2.png";
+import three from "./companylogo/3.png";
+import four from "./companylogo/4.png";
+import five from "./companylogo/5.png";
+
 import service1 from "./services/service-1.png";
 import service2 from "./services/service-2.png";
 import service3 from "./services/service-3.png";
@@ -146,4 +152,9 @@ export {
   instagram,
   telegram,
   twitter,
+  one,
+  two,
+  three,
+  four,
+  five,
 };
