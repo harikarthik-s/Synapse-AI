@@ -283,15 +283,15 @@ import {
     {
       id: "4",
       title: "Generate your content",
-      text: "Synapse AI can write content on the prompts given. It can source data from the internet and generate long paragraphs for blogs, posts etc.",
+      text: "Writes content for the given prompt. It can source data from the internet and generate long paragraphs for blogs, posts etc.",
       backgroundUrl: "./src/assets/benefits/card-5.svg",
       iconUrl: benefitIcon1,
       imageUrl: benefitImage2,
     },
     {
       id: "5",
-      title: "Prompting made easy",
-      text: "The app can understand wide range of prompts of users and reply accordingly.",
+      title: "Multilingual support",
+      text: "The AI chat app can understand and can reply in various languages for the prompts of user.",
       backgroundUrl: "./src/assets/benefits/card-6.svg",
       iconUrl: benefitIcon2,
       imageUrl: benefitImage2,
