@@ -7,7 +7,6 @@ import {
     chromecast,
     disc02,
     discord,
-    discordBlack,
     facebook,
     figma,
     file02,
@@ -301,21 +300,15 @@ import {
   export const socials = [
     {
       id: "0",
-      title: "Discord",
-      iconUrl: discordBlack,
-      url: "#",
+      title: "Twitter",
+      iconUrl: twitter,
+      url: "https://twitter.com/hari__karthik",
     },
     {
       id: "1",
-      title: "Twitter",
-      iconUrl: twitter,
-      url: "#",
-    },
-    {
-      id: "2",
       title: "Instagram",
       iconUrl: instagram,
-      url: "#",
+      url: "https://www.instagram.com/hari__karthik/",
     },
     {
       id: "3",
