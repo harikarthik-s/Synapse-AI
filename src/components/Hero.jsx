@@ -39,7 +39,7 @@ const Hero = () => {
             Unleash the power of AI within Synapse. Upgrade your productivity
             with Synapse, the AI chat app.
           </p>
-          <Button href="/pricing" white>
+          <Button href="/chat" white>
             Get started
           </Button>
         </div>
