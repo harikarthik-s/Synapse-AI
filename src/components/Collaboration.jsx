@@ -5,6 +5,7 @@ import { collabApps, collabContent, collabText } from "../constants";
 import Button from "./Button";
 import Section from "./Section";
 import { LeftCurve, RightCurve } from "./design/Collaboration";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 
 const Collaboration = () => {
   return (
@@ -34,9 +35,30 @@ const Collaboration = () => {
             <Button
               className={`absolute xl:top-[43rem] xl:left-[10rem] lg:top-[43rem] lg:left-[10rem] md:left-[5rem] sm:top-[0rem] sm:left-[20rem] xs:left-[5rem] xs:top-[-1rem] left-[2rem]`}
             >
+               {/* <SignedIn>
+            <Button white>
               <Link to="/chat">
-              Try it now
+                Get started
               </Link>
+            </Button>
+          </SignedIn>
+          <SignedOut>
+          <SignInButton mode="modal" redirectUrl="/chat" >
+          <Button white>
+              Get started
+            </Button>
+          </SignInButton>
+          </SignedOut> */}
+              <SignedIn>
+                <Link to="/chat">
+                Try it now
+                </Link>
+              </SignedIn>
+              <SignedOut>
+                <SignInButton mode="modal" redirectUrl="/chat" >
+                  Try it now
+                </SignInButton>
+              </SignedOut>
             </Button>
           </ScrollParallax>
         </div>

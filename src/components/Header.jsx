@@ -6,9 +6,10 @@ import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
-import { SignInButton, SignUpButton } from "@clerk/clerk-react";
+import { SignInButton, SignUpButton, SignOutButton, SignedIn,  useAuth, UserButton } from "@clerk/clerk-react";
 
 const Header = () => {
+  const {sessionId} = useAuth();
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
   const toggleNavigation = () => {
@@ -48,25 +49,29 @@ const Header = () => {
           </div>
           <HamburgerMenu />
         </nav>
-        
-        {/* <Link to="/sign-up" className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block">
-          New account
-        </Link> */}
-        <SignUpButton className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block" mode="modal" redirectUrl="/chat">
+
+        {sessionId ? (
+          <>
+          <div className="button hidden mr-8 transition-colors hover:text-n-1 lg:block">
+          <UserButton  />
+          </div>
+          <SignOutButton signOutOptions={{ sessionId }}>
+            <Button className="hidden lg:flex">
+              Sign out
+            </Button>
+          </SignOutButton>
+          </>
+        ) : (<>
+          <SignUpButton className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block" mode="modal" redirectUrl="/chat">
           New Account
         </SignUpButton>
-
         <SignInButton mode="modal" redirectUrl="/chat" >
           <Button className="hidden lg:flex">
           Sign in
           </Button>
         </SignInButton>
-        
-        {/* <Link to="/sign-in">
-          <Button className="hidden lg:flex">
-          Sign in
-          </Button>
-        </Link> */}
+        </>
+        )}
 
         <Button className="ml-auto lg:hidden" px="px-3" onClick={toggleNavigation}>
           <MenuSvg openNavigation={openNavigation} />

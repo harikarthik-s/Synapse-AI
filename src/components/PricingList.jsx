@@ -1,6 +1,8 @@
 import { check } from "../assets";
 import { pricing } from "../constants";
 import Button from "./Button";
+import {SignedIn, SignedOut, SignInButton} from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
 
 const PricingList = () => {
   return (
@@ -28,13 +30,42 @@ const PricingList = () => {
             )}
           </div>
 
+          <SignedIn>
+            <Button className="w-full mb-6"
+              // href={
+              //   (item.id!= "0") ? : "mailto:harikarthiks15@gmail.com"
+              // }
+              white={!!(item.price && item.id=== "0")}
+            >
+              <Link to={
+                item.id ==="0" ? "/chat" : "mailto:harikarthiks15@gmail.com"
+              }>{item.price && item.id==="0" ? "Get started" : "Contact us"}</Link>
+              
+            </Button>
+          </SignedIn>
+
+          <SignedOut>
+          {
+            item.id === "0"? (
+          <SignInButton mode="modal" redirectUrl="/chat" >
           <Button
             className="w-full mb-6"
-            href={item.price ? "/pricing" : "mailto:harikarthiks15@gmail.com"}
-            white={!!item.price}
+            white={!!(item.price && item.id=== "0")}
           >
-            {item.price ? "Get started" : "Contact us"}
+            {item.price && item.id==="0" ? "Get started" : "Contact us"}
           </Button>
+          </SignInButton>
+          ) : (<Button
+            className="w-full mb-6"
+            href={
+              item.id=== "0" ? "/chat" : "mailto:harikarthiks15@gmail.com"
+            }
+            white={!!(item.price && item.id=== "0")}
+          >
+            {item.price && item.id==="0" ? "Get started" : "Contact us"}
+          </Button>)
+          }
+          </SignedOut>
 
           <ul>
             {item.features.map((feature, index) => (

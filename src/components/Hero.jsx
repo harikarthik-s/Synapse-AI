@@ -8,6 +8,8 @@ import { useRef } from "react";
 import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
+import {Link} from "react-router-dom";
+import {SignedOut, SignedIn, SignInButton} from "@clerk/clerk-react";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -39,9 +41,20 @@ const Hero = () => {
             Unleash the power of AI within Synapse. Upgrade your productivity
             with Synapse, the AI chat app.
           </p>
-          <Button href="/chat" white>
-            Get started
-          </Button>
+          <SignedIn>
+            <Button white>
+              <Link to="/chat">
+                Get started
+              </Link>
+            </Button>
+          </SignedIn>
+          <SignedOut>
+          <SignInButton mode="modal" redirectUrl="/chat" >
+          <Button white>
+              Get started
+            </Button>
+          </SignInButton>
+          </SignedOut>
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">

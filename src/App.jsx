@@ -14,8 +14,7 @@ const router = createBrowserRouter(
               <ChatApp />
           </SignedIn>
           <SignedOut>
-              <RedirectToSignIn appearance={{
-        baseTheme: dark,}} />
+              <RedirectToSignIn redirectUrl="/" />
           </SignedOut>
         </>
         }
