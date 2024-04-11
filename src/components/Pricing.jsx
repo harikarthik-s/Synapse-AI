@@ -4,6 +4,7 @@ import Heading from "./Heading";
 import PricingList from "./PricingList";
 import { LeftLine, RightLine } from "./design/Pricing";
 import { ScrollParallax } from "react-just-parallax";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   return (
@@ -39,12 +40,12 @@ const Pricing = () => {
         </div>
 
         <div className="flex justify-center mt-10">
-          <a
+          <Link
             className="text-xs font-code font-bold tracking-wider uppercase border-b"
-            href="/pricing"
+            to="/chat"
           >
             See the full details
-          </a>
+          </Link>
         </div>
       </div>
     </Section>

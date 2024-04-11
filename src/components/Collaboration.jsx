@@ -1,5 +1,6 @@
 import { brainwaveSymbol, check } from "../assets";
 import { ScrollParallax } from "react-just-parallax";
+import { Link } from "react-router-dom";
 import { collabApps, collabContent, collabText } from "../constants";
 import Button from "./Button";
 import Section from "./Section";
@@ -29,10 +30,13 @@ const Collaboration = () => {
           </ul>
 
           <ScrollParallax isAbsolutelyPositioned>
+            
             <Button
               className={`absolute xl:top-[43rem] xl:left-[10rem] lg:top-[43rem] lg:left-[10rem] md:left-[5rem] sm:top-[0rem] sm:left-[20rem] xs:left-[5rem] xs:top-[-1rem] left-[2rem]`}
             >
+              <Link to="/chat">
               Try it now
+              </Link>
             </Button>
           </ScrollParallax>
         </div>

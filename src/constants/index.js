@@ -63,13 +63,13 @@ import {
     {
       id: "4",
       title: "New account",
-      url: "#signup",
+      url: "/chat",
       onlyMobile: true,
     },
     {
       id: "5",
       title: "Sign in",
-      url: "#login",
+      url: "/chat",
       onlyMobile: true,
     },
   ];
@@ -224,7 +224,7 @@ import {
       id: "1",
       title: "Premium",
       description: "Advanced AI chatbot, priority support, analytics dashboard",
-      price: "9.99",
+      price: "399",
       features: [
         "An advanced AI chatbot that can understand complex queries",
         "An analytics dashboard to track your conversations",
@@ -235,7 +235,7 @@ import {
       id: "2",
       title: "Enterprise",
       description: "Custom AI chatbot, advanced analytics, dedicated account",
-      price: null,
+      price: "999",
       features: [
         "An AI chatbot that can understand your queries",
         "Personalized recommendations based on your preferences",

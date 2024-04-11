@@ -6,7 +6,7 @@ import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
-import { SignInButton } from "@clerk/clerk-react";
+import { SignInButton, SignUpButton } from "@clerk/clerk-react";
 
 const Header = () => {
   const pathname = useLocation();
@@ -49,11 +49,18 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
         
-        <Link to="/sign-up" className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block">
+        {/* <Link to="/sign-up" className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block">
           New account
-        </Link>
+        </Link> */}
+        <SignUpButton className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block" mode="modal" redirectUrl="/chat">
+          New Account
+        </SignUpButton>
 
-        <SignInButton mode="modal" redirectUrl="/chat" />
+        <SignInButton mode="modal" redirectUrl="/chat" >
+          <Button className="hidden lg:flex">
+          Sign in
+          </Button>
+        </SignInButton>
         
         {/* <Link to="/sign-in">
           <Button className="hidden lg:flex">
