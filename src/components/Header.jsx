@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Link, useLocation} from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { synapse } from "../assets";
 import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
-import { SignInButton, SignUpButton, SignOutButton, SignedIn,  useAuth, UserButton } from "@clerk/clerk-react";
+import { SignInButton, SignUpButton, SignOutButton, useAuth, UserButton } from "@clerk/clerk-react";
 
 const Header = () => {
   const {sessionId} = useAuth();

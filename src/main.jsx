@@ -13,12 +13,17 @@ if (!PUBLISHABLE_KEY) {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ClerkProvider appearance={{
+    <ClerkProvider
+      appearance={{
         baseTheme: dark,
-        signIn: { baseTheme: dark },
-        signUp: { baseTheme: dark }
-      }}  publishableKey={PUBLISHABLE_KEY}>
-      <App/>
+        variables: {
+          colorPrimary: "#ac6aff",
+          colorText: "white",
+        },
+      }}
+      publishableKey={PUBLISHABLE_KEY}
+    >
+      <App />
     </ClerkProvider>
   </React.StrictMode>
 );

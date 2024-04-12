@@ -2,7 +2,6 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Home from "./Home";
 import ChatApp from "./ChatApp";
 import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
-import { dark } from "@clerk/themes";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
