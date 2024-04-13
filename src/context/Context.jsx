@@ -7,7 +7,7 @@ const ContextProvider = (props) => {
 	const [input, setInput] = useState("");
 	const [recentPrompt, setRecentPrompt] = useState("");
 	const [prevPrompts, setPrevPrompts] = useState([]);
-	const [showResults, setShowResults] = useState(true);
+	const [showResults, setShowResults] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [isPending, setIsPending] = useState(false);
 	const [resultData, setResultData] = useState("");
@@ -36,6 +36,7 @@ const ContextProvider = (props) => {
             setPrevPrompts(prev=>[...prev,input]);
             setRecentPrompt(input);
             response=await runChat(input);
+			
         }
 		
 		try {
@@ -55,6 +56,7 @@ const ContextProvider = (props) => {
 				delayPara(i, nextWord + "");
 			}
 			setIsPending(false);
+			
 		} catch (error) {
 			console.error("Error while running chat:", error);
 			// Handle error appropriately
