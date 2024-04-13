@@ -1,21 +1,23 @@
-const {
+import {
   GoogleGenerativeAI,
-  HarmBlockThreshold,
   HarmCategory,
-} = require("@google/generative-ai");
+  HarmBlockThreshold,
+} from "@google/generative-ai";
 
-const MODEL_NAME = process.env.VITE_PUBLIC_GEMINI_MODEL_NAME;
-const API_KEY = process.env.VITE_PUBLIC_GEMINI_API_KEY;
+const MODEL_NAME = import.meta.env.VITE_PUBLIC_GEMINI_MODEL_NAME;
+const API_KEY = import.meta.env.VITE_PUBLIC_GEMINI_API_KEY;
 
 async function runChat(prompt) {
   const genAI = new GoogleGenerativeAI(API_KEY);
   const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+
   const generationConfig = {
     temperature: 0.9,
     topK: 1,
     topP: 1,
     maxOutputTokens: 2048,
   };
+
   const safetySettings = [
     {
       category: HarmCategory.HARM_CATEGORY_HARASSMENT,
@@ -34,16 +36,17 @@ async function runChat(prompt) {
       threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
     },
   ];
+
   const chat = model.startChat({
     generationConfig,
     safetySettings,
     history: [],
   });
-  try {
-    const result = await chat.sendMessage(prompt);
-    const response = result.response;
-    return { data: response.text() };
-  } catch (error) {
-    return { error: error.message.split(":").reverse()[0] };
-  }
+
+  const result = await chat.sendMessage(prompt);
+  const response = result.response;
+  console.log(response.text());
+  return response.text();
 }
+
+export default runChat;
