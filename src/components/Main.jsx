@@ -7,6 +7,7 @@ import { Code, Compass, DraftingCompass, ImagePlus, Mic, SendHorizonal, Loader }
 import { brainwaveSymbol } from "../assets";
 import { GradientLight } from "./design/Benefits";
 import { BackgroundCircles} from "./design/Hero";
+import ChatBubbleWing from "../assets/svg/ChatBubbleWing";
 
 const Main = () => {
     const {
@@ -28,11 +29,14 @@ const Main = () => {
     }
 
     return(
-        <div className="relative h-screen flex-1 pb-[15vh] overflow-hidden selection:bg-n-9/40">
+        <div className="relative h-screen flex-1 pb-[15vh] overflow-hidden selection:bg-n-9/90">
             <nav className="flex items-center justify-between px-5 py-[1.375rem] text-base font-light text-brand-300 z-1">
                 <Link to="/"><img src={synapse} alt="" /></Link>
                 <div className="grid h-10 w-10 place-items-center rounded-full bg-brand-100">
                     <UserButton className="min-w-4" size={16} />
+                    {/* {
+                        console.log(<UserButton/>);
+                    } */}
                 </div>
             </nav>
             
@@ -78,14 +82,22 @@ const Main = () => {
                     </>
                 ): (
                     <div className='no-scrollbar h-[calc(100vh-5.25rem)] overflow-y-scroll px-[5%] pb-40 z-5'>
-						<div className='my-10 flex items-center gap-5'>
-							<div className='grid min-h-10 min-w-10 place-items-center rounded-full bg-brand-100'>
-								<img src={imageUrl} className='icon text-brand-300 rounded-full w-[40px] ' size={16} />
+						<div className='relative my-10 flex items-center gap-5'>
+							<div className='grid min-h-10 min-w-10 self-end rounded-full bg-brand-100'>
+								<img src={imageUrl} className='icon text-brand-300 rounded-full w-[35px] ' size={14} />
 							</div>
-
-							<p>{recentPrompt}</p>
+                            <div className="  w-full  pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-t-xl rounded-br-xl ">
+							    <p>{recentPrompt}</p>
+                                <p className="tagline absolute right-2.5  text-[0.625rem] text-n-3 uppercase">
+                                    {fullName}
+                                </p>
+                                <ChatBubbleWing
+                                    className="absolute right-full left-[2.1rem] bottom-0 -scale-x-100"
+                                    pathClassName="fill-n-6"
+                                />
+                            </div>
 						</div>
-                        <div className='flex items-start gap-5'>
+                        <div className=' relative flex items-start gap-5'>
 							<div className='grid h-10 min-w-10 place-items-center'>
                                 <img src={brainwaveSymbol}  alt="synapse" className={`-mt-[0.5625rem] aspect-square w-9 h-9 duration-500 
                                                                             ${ isPending ? 'animate-spin': loading ? 'animate-spin'
@@ -99,8 +111,17 @@ const Main = () => {
                                     <hr className={`mt-1.5 h-5 w-8/12 animate-background-pan rounded-md border-none bg-brand-100 bg-gradient-to-r from-[#9ed7ff] via-[#ffffff] to-[#9ed7ff] [background-size:800px_50px] [animation-delay:300ms] [animation-duration:4s]`}/>
 								</div>
 							) : (
-                                    
-								<p className='font-light leading-[1.8]' dangerouslySetInnerHTML={{ __html: resultData }} />
+                                <div className="  w-full  pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-tr-xl rounded-b-xl ">
+							        <p className='font-light leading-[1.8]' dangerouslySetInnerHTML={{ __html: resultData }} />
+                                    <p className="tagline absolute left-5.5 top-5 text-[0.625rem] text-n-3 uppercase">
+                                        SYNAPSE AI
+                                    </p>
+                                    <ChatBubbleWing
+                                        className="absolute right-full left-[2.1rem] top-0 -scale-x-100 -scale-y-100"
+                                        pathClassName="fill-n-6"
+                                    />
+                                </div> 
+								
 							)}
                         </div>
                     </div>
@@ -111,7 +132,7 @@ const Main = () => {
                         <input
 							onChange={(e) => setInput(e.target.value)}
 							onKeyDown={(e) => e.key === 'Enter' && onSent()}
-							className='flex border-none overflow-hidden flex-grow bg-transparent text-slate outline-none'
+							className='flex border-none overflow-hidden flex-grow bg-transparent text-slate outline-none selection:bg-n-7'
 							type='text'
 							placeholder='Enter a prompt here'
 							value={input}
@@ -139,14 +160,14 @@ const Main = () => {
 							) : null}
 						</div>
                     </div>
-                    <p className='mx-auto my-3 text-center text-xs font-light text-n-2 sm:text-sm'>
+                    <p className='mx-auto my-2 text-center text-xs font-light text-n-2 '>
 						Synapse may display inaccurate info, including about people, so
 						double-check its responses.
 					</p>
                 </div>
 
             </div>
-            <div className="absolute opacity-40 top-[54%] left-1/2 z-[-1] w-[234%] -translate-x-1/2 md:top-[46%] md:w-[138%] lg:w-[100%] lg:-top-[50%] lg:left-[50%]">
+            <div className="absolute opacity-30 top-[54%] left-1/2 z-[-1] w-[234%] -translate-x-1/2 md:top-[46%] md:w-[138%] lg:w-[100%] lg:-top-[50%] lg:left-[5%]">
             <img
               src={heroBackground}
               className="w-full"
@@ -154,10 +175,15 @@ const Main = () => {
               height={1800}
               alt="hero"
             />
-            <BackgroundCircles/>
-            {/* <GradientLight/> */}
+            
+            
           </div>
-          {/* <BackgroundCircles/> */}
+          <div className="absolute opacity-30 top-[54%] left-1/2 z-[-1] w-[234%] -translate-x-1/2 md:top-[46%] md:w-[138%] lg:w-[100%] lg:-top-[10%] lg:left-[75%]">
+            <GradientLight/>
+          </div>
+          <div className="absolute opacity-30 top-[54%] left-1/2 z-[-1] w-[234%] -translate-x-1/2 md:top-[46%] md:w-[138%] lg:w-[100%] lg:-top-[10%] lg:left-[75%]">
+            <BackgroundCircles />
+          </div>
         </div>
     )
 }

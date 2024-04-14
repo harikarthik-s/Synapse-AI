@@ -20,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         variables: {
           colorPrimary: "#ac6aff",
           colorText: "white",
+          colorBackground: "#15131d"
         },
       }}
       publishableKey={PUBLISHABLE_KEY}
