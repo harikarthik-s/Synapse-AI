@@ -12,7 +12,7 @@ function Home() {
 
   return (
     <>
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden selection:bg-n-9/40">
         <Header/>
         <Hero/>
         <Benefits/>
