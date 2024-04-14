@@ -47,7 +47,7 @@ const PricingList = () => {
           <SignedOut>
           {
             item.id === "0"? (
-          <SignInButton mode="modal" redirectUrl="/chat" >
+          <SignInButton mode="modal" afterSignInUrl="/chat" >
           <Button
             className="w-full mb-6"
             white={!!(item.price && item.id=== "0")}

@@ -49,7 +49,7 @@ const Hero = () => {
             </Button>
           </SignedIn>
           <SignedOut>
-          <SignInButton mode="modal" redirectUrl="/chat" >
+          <SignInButton mode="modal" >
           <Button white>
               Get started
             </Button>

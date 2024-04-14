@@ -55,7 +55,7 @@ const Collaboration = () => {
                 </Link>
               </SignedIn>
               <SignedOut>
-                <SignInButton mode="modal" redirectUrl="/chat" >
+                <SignInButton mode="modal" afterSignInUrl="/chat">
                   Try it now
                 </SignInButton>
               </SignedOut>

@@ -62,10 +62,10 @@ const Header = () => {
           </SignOutButton>
           </>
         ) : (<>
-          <SignUpButton className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block" mode="modal" redirectUrl="/chat">
+          <SignUpButton className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block" mode="modal" >
           New Account
         </SignUpButton>
-        <SignInButton mode="modal" redirectUrl="/chat" >
+        <SignInButton mode="modal" >
           <Button className="hidden lg:flex">
           Sign in
           </Button>
