@@ -86,14 +86,14 @@ const Main = () => {
 							<div className='grid min-h-10 min-w-10 self-end rounded-full bg-brand-100'>
 								<img src={imageUrl} className='icon text-brand-300 rounded-full w-[35px] ' size={14} />
 							</div>
-                            <div className="  w-full  pt-2.5 pr-2.5 pb-7 pl-5 bg-n-6 rounded-t-xl rounded-br-xl ">
+                            <div className="  w-full  pt-2.5 pr-2.5 pb-7 pl-5 bg-n-7/90 rounded-t-xl rounded-br-xl ">
 							    <p>{recentPrompt}</p>
                                 <p className="tagline absolute right-2.5  text-[0.625rem] text-n-3 uppercase">
                                     {fullName}
                                 </p>
                                 <ChatBubbleWing
-                                    className="absolute right-full left-[2.1rem] bottom-0 -scale-x-100"
-                                    pathClassName="fill-n-6"
+                                    className="absolute right-full bottom-0 left-9 -scale-x-100"
+                                    pathClassName="fill-n-7"
                                 />
                             </div>
 						</div>
@@ -146,7 +146,7 @@ const Main = () => {
 							<Mic className='min-w-4' size={20} />
                         </a>
 							{!loading && !!input ? (
-                                <a className="flex items-center justify-center w-8 h-8 cursor-pointer rounded-full transition-colors hover:bg-n-7">
+                                <a className="flex items-center justify-center w-10 h-10 cursor-pointer rounded-full transition-colors hover:bg-n-7">
 								<SendHorizonal
 									onClick={() => onSent()}
 									className='min-w-4'
