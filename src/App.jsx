@@ -9,7 +9,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/chat" element= {
         <>
-          <SignedIn>
+          <SignedIn redirectUrl="/chat">
               <ChatApp />
           </SignedIn>
           <SignedOut>
